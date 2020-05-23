@@ -2,8 +2,8 @@
 
 create_baseline_image:
   stage: build
-  script: "configs/baseline/build.sh"
+  script: "./configs/baseline/build.sh"
 
 create_releng_image:
   stage: build
-  script: "configs/releng/build.sh"
+  script: "./configs/releng/build.sh"
