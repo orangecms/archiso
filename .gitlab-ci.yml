@@ -5,8 +5,8 @@ default:
   before_script:
     - pacman --noconfirm -Syy
     - pacman --noconfirm -S edk2-ovmf libvirt qemu vagrant
-    - systemctl start libvirtd
     - vagrant plugin install vagrant-libvirt
+    - ls -lah /dev/kvm
 
 build_images:
   stage: build
