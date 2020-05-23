@@ -8,11 +8,11 @@ default:
 baseline_image:
   stage: build
   script:
-    - ls -lah
+    - make install
     - bash ./configs/baseline/build.sh
 
 releng_image:
   stage: build
   script:
-    - ls -lah
+    - make install
     - bash ./configs/releng/build.sh
