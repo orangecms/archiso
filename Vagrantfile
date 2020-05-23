@@ -78,7 +78,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "releng" do |releng|
-    base.vm.provision "shell", inline: <<-SHELL
+    releng.vm.provision "shell", inline: <<-SHELL
     cd /vagrant
     ./configs/releng/build.sh -v
     SHELL
