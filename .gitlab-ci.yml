@@ -9,10 +9,10 @@ baseline_image:
   stage: build
   script:
     - make install
-    - bash ./configs/baseline/build.sh
+    - bash ./configs/baseline/build.sh -v
 
 releng_image:
   stage: build
   script:
     - make install
-    - bash ./configs/releng/build.sh
+    - bash ./configs/releng/build.sh -v
