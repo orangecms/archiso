@@ -4,7 +4,7 @@ default:
   image: archlinux
   before_script:
     - pacman --noconfirm -Syy
-    - pacman --noconfirm -S edk2-ovmf libvirt qemu ruby-bundler vagrant
+    - pacman --noconfirm -S base-devel edk2-ovmf libvirt qemu ruby-bundler vagrant
     - vagrant plugin install vagrant-libvirt
 
 build_images:
