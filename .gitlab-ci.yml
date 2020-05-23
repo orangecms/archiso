@@ -3,16 +3,11 @@
 default:
   image: archlinux
   before_script:
-    - pacman --noconfirm -Syy make arch-install-scripts squashfs-tools libisoburn dosfstools lynx
+    - pacman --noconfirm -Syy
+    - pacman --noconfirm -S edk2-ovmf libvirt qemu vagrant
+    - systemctl start libvirtd
+    - vagrant plugin install vagrant-libvirt
 
-baseline_image:
+build_images:
   stage: build
-  script:
-    - make install
-    - bash ./configs/baseline/build.sh -v
-
-releng_image:
-  stage: build
-  script:
-    - make install
-    - bash ./configs/releng/build.sh -v
+  script: vagrant up --provider=libvirt
