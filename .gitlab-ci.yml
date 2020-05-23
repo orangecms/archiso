@@ -1,9 +1,18 @@
 ---
 
-create_baseline_image:
-  stage: build
-  script: "./configs/baseline/build.sh"
+default:
+  image: archlinux
+  before_script:
+    - pacman -S make arch-install-scripts squashfs-tools libisoburn dosfstools lynx
 
-create_releng_image:
+baseline_image:
   stage: build
-  script: "./configs/releng/build.sh"
+  script:
+    - ls -lah
+    - bash ./configs/baseline/build.sh
+
+releng_image:
+  stage: build
+  script:
+    - ls -lah
+    - bash ./configs/releng/build.sh
