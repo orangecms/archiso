@@ -3,7 +3,7 @@
 default:
   image: archlinux
   before_script:
-    - pacman -Syy make arch-install-scripts squashfs-tools libisoburn dosfstools lynx
+    - pacman --noconfirm -Syy make arch-install-scripts squashfs-tools libisoburn dosfstools lynx
 
 baseline_image:
   stage: build
