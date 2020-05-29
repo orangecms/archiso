@@ -1,7 +1,7 @@
 ---
 
 default:
-  image: archlinux
+  image: archlinux/base
   before_script:
     - pacman --noconfirm -Syy
     - pacman --noconfirm -S base-devel edk2-ovmf libvirt qemu ruby-bundler vagrant
